@@ -80,17 +80,16 @@ Elelabs_EzspFwUtility:   Failed to restart into bootloader mode. Please see user
 ```
 :(
 
-I scoured the internet again for a solution. There was one ambigious message on the same OpenHAB topic above from NilsOF.  
+I scoured the internet again for a solution there wasn't much. I went back over the OpenHAB topic posts. There was one ambigious message on the same OpenHAB topic above from NilsOF.  
 
-"I used the OpenHAB console zigbee firmware command to flash."
+"I used the OpenHAB console zigbee firmware command to flash." .Thank You.
 
-I went straight into my OpenHAB console, I wanted to find this mysterious zigbee firmware flash command. I grepped out the
-zigbee command and the only thing found was an otaupgrade command.
+I went straight into my OpenHAB console, I wanted to find the mysterious zigbee firmware flash command. I had looked previously and was sure it didnt exist, I grepped out the zigbee command and the only thing found was an otaupgrade command.
 ```
 zigbee firmware 
 Error: Could not find command: firmware
 ```
-After re-reading the above OpenHAB forum post a few times, it was apparent that NilsOF was using a later version of the ZigBee
+After re-reading the above OpenHAB forum post a few times again, it was apparent to me that NilsOF was using a later version of the ZigBee
 binding for OpenHAB than myself. 
 
 I then upgraded the OpenHAB packages to the latest unstable version and refreshed the zigbee bundles in the OpenHAB console. 
