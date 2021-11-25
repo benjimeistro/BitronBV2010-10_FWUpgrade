@@ -53,7 +53,7 @@ After running the above command it threw an error, I commented this variable in 
 I DO NOT recommend you do this, this is just what i did.
 
 I could now probe and restart the BV AV2010/10
-
+```
 ./Elelabs_EzspFwUtility.py probe -p /dev/ttyUSB0  -b 57600 -d DEBUG
 Elelabs_EzspFwUtility:   RESET FRAME
 Elelabs_EzspFwUtility:   EZSP adapter in bootloader mode detected:
@@ -65,7 +65,7 @@ Elelabs_EzspFwUtility:   RESET FRAME
 Elelabs_EzspFwUtility:   EZSP adapter in bootloader mode detected:
 Elelabs_EzspFwUtility:   EM3587 Serial Btl v5.8.0.0 b134
 Elelabs_EzspFwUtility:   Allready in bootloader mode. No need to restart
- 
+``` 
 Ah! As seen above I can now see the FW version running on the stick and I now know that because of the information
 supplied and groundwork on the chipset, the FW supplied by NilsOF in the GitHub link above can be applied to my device! 
 
@@ -73,7 +73,7 @@ My BV AV2010/10 is on firmware 5.8.0 from the output above..
 
 Right, time to get flashing. I immediately tried to flash it using the script above, at first it almost succeeded, or
 so I thought.
-
+```
 ./Elelabs_EzspFwUtility.py flash -f /bitron_fw/NCP_USW_EM3587-LR_678-115k2.ebl -p /dev/ttyUSB0 -b 57600 -d DEBUG 
 Elelabs_EzspFwUtility:   RESET FRAME
 Elelabs_EzspFwUtility:   EZSP adapter in bootloader mode detected:
@@ -81,7 +81,7 @@ Elelabs_EzspFwUtility:   EM3587 Serial Btl v5.8.0.0 b134
 Elelabs_EzspFwUtility:   Allready in bootloader mode. No need to restart
 Elelabs_EzspFwUtility:   Successfully restarted into X-MODEM mode! Starting upload of the new firmware... DO NOT INTERRUPT(!)
 Elelabs_EzspFwUtility:   Failed to restart into bootloader mode. Please see users guide.
-
+```
 :(
 
 I scoured the internet again for a solution. There was one ambigious message on the same OpenHAB topic above from NilsOF.  
@@ -90,10 +90,10 @@ I scoured the internet again for a solution. There was one ambigious message on 
 
 I went straight into my OpenHAB console, I wanted to find this mysterious zigbee firmware flash command. I grepped out the
 zigbee command and the only thing found was an otaupgrade command.
-
+```
 zigbee firmware 
 Error: Could not find command: firmware
-
+```
 After re-reading the above OpenHAB forum post a few times, it was apparent that the user was using a later version of the ZigBee
 binding for OpenHAB than myself. 
 
@@ -102,28 +102,28 @@ I then upgraded the OpenHAB packages to the latest unstable version and refreshe
 After listing the bundles I could see the zigbee bundle had been upgraded to the latest version. 
 
 I jumped to the ZigBee command in OpenHAB console and again grepped the firmware keyword.
-
+```
 Usage: openhab:zigbee - firmware [VERSION | CANCEL | FILE] - Updates the dongle firmware
-
+````
 Excellent, time to move forward. 
 
 I then tried to flash the firmware directly from the console . 
-
+```
 openhab:zigbee firmware /bitron_fw/NCP_USW_EM3587-LR_678-115k2.ebl
 Error: Could not find bridge handler for bridge
-
+```
 It's not looking good. Although, I knew it was probably stuck in bootloader mode after the flash. 
 
 I also knew my system could also do with a refresh after installing the new bindings etc. 
 
 rebooted.
 
-After reboot then went straight back into the OpenHAB console:
-
+After reboot then went straight back into the OpenHAB console and ran the zigbee firmware command again:
+```
 openhab> zigbee firmware /bitron_fw/NCP_USW_EM3587-LR_678-115k2.ebl
 Dongle firmware status: FIRMWARE_UPDATE_STARTED.
 Starting dongle firmware update...
-
+```
 I didn't get any response from the console, it will show this message and then that is all. It just did this and then all was quiet. 
 
 At this point I'm thinking it's either not flashed, it has flashed, it's currently flashing, might even be a brick.. xD
@@ -135,24 +135,24 @@ I left it alone for around ten minutes, I know better than to panic at this poin
 I also knew I could ground a pin of the device if it bricked to get it back into bootloader mode, so all would not be lost. 
 
 I opened another console, and started to probe the device using the Elelabs script. 
-
+```
 ./Elelabs_EzspFwUtility.py probe -p /dev/ttyUSB0 
 Elelabs_EzspFwUtility:   Generic Zigbee EZSP adapter detected:
 Elelabs_EzspFwUtility:   EZSP v8
-
+```
 Yes.. new firmware and dongle detected, now I'm going to try it in RAW debug mode..  
-
+```
 ./Elelabs_EzspFwUtility.py probe -p /dev/ttyUSB0 -d RAW -b 57600
 Elelabs_EzspFwUtility:   RESET FRAME
 Elelabs_EzspFwUtility:   Couldn't communicate with the adapter in Zigbee (EZSP) mode, Thread (Spinel) mode or bootloader mode
-
+```
 Notice the second time I set the buad rate to the previous setting. I realised pretty quickly, this failed because the baudrate 
 had changed from 57600 to 115200 as when you run the script it defaults to 115200. 
 
 I then retested using the 115200 baud rate. Success.
 
 I then tried to restart the device in normal mode as I now knew the FW upgrade was successful. 
-
+```
 ./Elelabs_EzspFwUtility.py restart -m nrml  -p /dev/ttyUSB0  -b 115200 -d RAW
 Elelabs_EzspFwUtility:   EZSP v8 detected
 Elelabs_EzspFwUtility:   sendVersion: V8
@@ -161,7 +161,7 @@ Elelabs_EzspFwUtility:   getMfgToken: EZSP_MFG_STRING
 Elelabs_EzspFwUtility:   Generic Zigbee EZSP adapter detected:
 Elelabs_EzspFwUtility:   EZSP v8
 Elelabs_EzspFwUtility:   Allready in normal mode. No need to restart
-
+```
 Now I am happy the FW flashed successfully and the device is in Normal mode, I unplugged and replugged the dongle.
 
 Now OpenHAB zigbee binding could see the device but couldn't communicate the device, it added it to my Inbox, but couldn't init. 
