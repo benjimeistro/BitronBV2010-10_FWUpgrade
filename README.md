@@ -107,7 +107,7 @@ I then tried to flash the firmware directly from the console .
 openhab:zigbee firmware /bitron_fw/NCP_USW_EM3587-LR_678-115k2.ebl
 Error: Could not find bridge handler for bridge
 ```
-It's not looking good. Although, I knew it was probably stuck in bootloader mode after the flash. 
+It's not looking good. Although, I knew it was probably stuck in bootloader mode after the flash attempt with the Elelabs script. 
 
 I also knew my system could also do with a refresh after installing the new bindings etc. 
 
