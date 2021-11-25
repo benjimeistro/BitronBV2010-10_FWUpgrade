@@ -76,7 +76,7 @@ We are on 5.8.0..
 Right time to get flashing. I immediately tried to flash it using the script above, at first it almost succeeded, or
 so I thought.
 
-./Elelabs_EzspFwUtility.py flash -f /home/b/bitron_fw/NCP_USW_EM3587-LR_678-115k2.ebl -p /dev/ttyUSB0 -b 57600 -d DEBUG 
+./Elelabs_EzspFwUtility.py flash -f /bitron_fw/NCP_USW_EM3587-LR_678-115k2.ebl -p /dev/ttyUSB0 -b 57600 -d DEBUG 
 Elelabs_EzspFwUtility:   RESET FRAME
 Elelabs_EzspFwUtility:   EZSP adapter in bootloader mode detected:
 Elelabs_EzspFwUtility:   EM3587 Serial Btl v5.8.0.0 b134
