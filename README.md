@@ -20,7 +20,7 @@ After Googling the chipset and stick I narrowed it down to one user called NilsO
  
 https://community.openhab.org/t/firmware-upgrade-the-bitronvideo-bv-2010-10-zigbee-usb-dongle/128879
 
-NilsOF had managed to flash a later version FW to his BV AV2010!! Using a FW file here below:
+NilsOF had managed to flash a later version FW to his BV AV2010, in the openHAB topic above he mentioned he had used the FW in the link below to upgrade the AV2010/10 to a later version:
 
 https://github.com/grobasoz/zigbee-firmware/raw/af7c35ea8d580152eb9853af1d3fab91bef3b5d4/EM3587/NCP_USW_EM3587-LR_678-115k2.ebl
 
@@ -147,7 +147,7 @@ Elelabs_EzspFwUtility:   Couldn't communicate with the adapter in Zigbee (EZSP) 
 Notice the second time I set the buad rate to the previous setting. I realised pretty quickly, this failed because the baudrate 
 had changed from 57600 to 115200 as when you run the script it defaults to 115200. 
 
-I then retested using the 115200 baud rate. Success.
+I then retested using the 115200 baud rate as per the FW file. Success.
 
 I then tried to restart the device in normal mode as I now knew the FW upgrade was successful. 
 ```
@@ -170,8 +170,8 @@ The new firmware operates @ 115200 Hardware flow control.
 
 I then created a zigbee.thing object to manually apply static settings to the new device and ignored the one generated in the Inbox.
 
-I then set the zigbee logs on OpenHAB to DEBUG and watched the binding init the device. 
+I then set the zigbee logs on OpenHAB to DEBUG and watched the binding initialize the device. 
 
-After around 5 minutes, eventually it came online and has been functioning as expected and seems to work much better than the previous FW. 
+After around 5 minutes, it came online and has been functioning as expected and seems to work much better than the previous FW. 
 
 Many Thanks again to Elelabs, Chris Jackson and NilsOF.
