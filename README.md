@@ -36,23 +36,23 @@ Disclaimer:
   ***Anything you decide to follow in the document, you do at your own risk. With your own will, with your own consequences. I AM NOT RESPONSIBLE ***
 
 METHOD:
-I downloaded Elelabs flashing script for EMBER chipsets from here:
+I downloaded Elelabs flashing script for EMBER chipsets to check the firmware versions from here:
 
 https://github.com/Elelabs/elelabs-zigbee-ezsp-utility
 
-Unzipped the directory and cd'd to it, then installed requirements as per instructions on the GitHUB page.
+I unzipped the directory and cd'd to it, then installed requirements as per instructions on the Elelabs GitHUB page.
 
-I then ran the script using this command. After granting execute permissions on the script. 
-
+I then ran the script using this command after granting execute permissions on the script: 
+```
 sudo python3 ./Elelabs_EzspFwUtility.py  probe -p /dev/ttyUSB0 -b 57600 -d RAW
-
+```
 A quick breakdown of the above command is. probe [probe device] -p [port] -b [baudrate] -d [debugMode]  
 
-After running the above command it threw an error, I commented this variable in the script. 
+After running the above command it threw an error, I commented this variable that errored in the script. 
 
 I DO NOT recommend you do this, this is just what i did.
 
-I could now probe and restart the BV AV2010/10
+I could now probe and restart the BV AV2010/10 in bootloader mode and back into normal mode.
 ```
 ./Elelabs_EzspFwUtility.py probe -p /dev/ttyUSB0  -b 57600 -d DEBUG
 Elelabs_EzspFwUtility:   RESET FRAME
@@ -176,4 +176,4 @@ I then set the zigbee logs on OpenHAB to DEBUG and watched the binding init the 
 
 After around 5 minutes, eventually it came online and has been functioning as expected and seems to work much better than the previous FW. 
 
-Many Thanks to Elelabs, Chris Jackson and NilsOF.
+Many Thanks again to Elelabs, Chris Jackson and NilsOF.
