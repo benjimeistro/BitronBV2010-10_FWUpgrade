@@ -68,9 +68,9 @@ Elelabs_EzspFwUtility:   Allready in bootloader mode. No need to restart
 Ah! As seen above I can now see the FW version running on the stick and I now know that because of the information
 supplied and groundwork on the chipset, the FW supplied by NilsOF in the GitHub link above can be applied to my device! 
 
-We are on 5.8.0..
+My BV AV2010/10 is on firmware 5.8.0 from the output above..
 
-Right time to get flashing. I immediately tried to flash it using the script above, at first it almost succeeded, or
+Right, time to get flashing. I immediately tried to flash it using the script above, at first it almost succeeded, or
 so I thought.
 
 ./Elelabs_EzspFwUtility.py flash -f /bitron_fw/NCP_USW_EM3587-LR_678-115k2.ebl -p /dev/ttyUSB0 -b 57600 -d DEBUG 
@@ -176,4 +176,3 @@ I then set the zigbee logs on OpenHAB to DEBUG and watched the binding init the 
 After around 5 minutes, eventually it came online and has been functioning as expected and seems to work much better than the previous FW. 
 
 Many Thanks to Elelabs, Chris Jackson and NilsOF.
- 
