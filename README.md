@@ -136,12 +136,11 @@ Yes.. new firmware and dongle detected, now I'm going to try it in RAW debug mod
 Elelabs_EzspFwUtility:   RESET FRAME
 Elelabs_EzspFwUtility:   Couldn't communicate with the adapter in Zigbee (EZSP) mode, Thread (Spinel) mode or bootloader mode
 ```
-Notice the second time I set the buad rate to the previous setting. I realised pretty quickly, this failed because the baudrate 
-had changed from 57600 to 115200 as when you run the script it defaults to 115200. 
+Notice that the second time I set the baud rate to the previous setting. I realised pretty quickly (the firmware has 1152 on the end). This failed because the baudrate has changed from 57600 to 115200 after the upgrade, as when you run the script without the -b setting it defaults to 115200. 
 
 I then retested using the 115200 baud rate as per the FW file. Success.
 
-I then tried to restart the device in normal mode as I now knew the FW upgrade was successful. 
+I then tried to restart the device in normal mode, as I now knew the FW upgrade was successful. 
 ```
 ./Elelabs_EzspFwUtility.py restart -m nrml  -p /dev/ttyUSB0  -b 115200 -d RAW
 Elelabs_EzspFwUtility:   EZSP v8 detected
@@ -154,15 +153,15 @@ Elelabs_EzspFwUtility:   Allready in normal mode. No need to restart
 ```
 Now I am happy the FW flashed successfully and the device is in Normal mode, I unplugged and replugged the dongle.
 
-Now OpenHAB zigbee binding could see the device but couldn't communicate the device, it added it to my Inbox, but couldn't init. 
+Now OpenHAB zigbee binding could see the device but couldn't communicate the device, it added it to my Inbox, but couldn't initialize. 
 
 This is because it is auto added to the Inbox with a default value of 57600 baudrate with Software flow control mentioned by NilsOF also. 
 
 The new firmware operates @ 115200 Hardware flow control. 
 
-I then created a zigbee.thing object to manually apply static settings to the new device and ignored the one generated in the Inbox.
+I then created a zigbee.thing object manually on OpenHAB to apply static settings to the new device and then ignored the one generated in the Inbox.
 
-I then set the zigbee logs on OpenHAB to DEBUG and watched the binding initialize the device. 
+I then set the zigbee binding logs on OpenHAB console to DEBUG and watched the binding start to initialize the device successfully. 
 
 After around 5 minutes, it came online and has been functioning as expected and seems to work much better than the previous FW. 
 
