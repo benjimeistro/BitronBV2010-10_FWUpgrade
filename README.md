@@ -12,9 +12,7 @@ Which worked on my OpenHAB system but not very well. :(
 
 I had kept an eye on FW upgrade methods for the Bitron BV AV2010/10, but nothing concrete had arisen. 
 
-There was this link here:
-
-https://github.com/zigpy/bellows/issues/348
+There was this link here: https://github.com/zigpy/bellows/issues/348
 
 The link above is interesting and explains the bootloader process and the chipset flashing methods, but the outcome wasn't too specific and looked to be a lot of development talk and experimentation for the bellows tool with no concrete FW or method, that I could see. 
 
