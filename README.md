@@ -31,7 +31,7 @@ NilsOF provided the method of flashing via the openHAB console in the OpenHAB fo
 Disclaimer:
 
 ***I do not hold any guarantees that this will work for you, its just the documented process I took to upgrade my firmware on my Bitron Funkstik BV AV2010/10.***  
-  ***Anything you decide to follow in the document, you do at your own risk. At your own consequences. THIS IS MY PUBLIC PERSONAL GUIDE, I AM NOT RESPONSIBLE ***
+***Anything you decide to follow in this document, you do at your own risk. At your own consequence. THIS IS MY PUBLIC PERSONAL GUIDE FOR PERSONAL USE, I AM NOT RESPONSIBLE FOR ANY DAMAGE INCURRED IF YOU FOLLOW ANY OF THE BELOW INSTRUCTIONS.***
 
 METHOD:
 I downloaded Elelabs flashing script for EMBER chipsets to check the firmware versions from here:
