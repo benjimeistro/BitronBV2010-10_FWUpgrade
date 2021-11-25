@@ -3,6 +3,8 @@ Bitron BV AV2010/10 ZigBee USB Stick FW Upgrade Procedure.
 
 ***I DO NOT HOLD ANY RESPONSIBILTY FOR METHODS PROPOSED BELOW THIS WAS JUST MY WORKING METHOD TO UPGRADE THE FW AND NOTES TO HELP ME REMEMBER THE PROCESS***
 
+Firstly: Many Thanks to Elelabs, Chris Jackson and NilsOF.
+
 Background:
 The Bitron BV AV2010/10 Funkstick I bought from Amazon was loaded with FW version 5.8.0.
 
