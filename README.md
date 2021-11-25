@@ -46,7 +46,7 @@ I then ran the script using this command. After granting execute permissions on 
 
 sudo python3 ./Elelabs_EzspFwUtility.py  probe -p /dev/ttyUSB0 -b 57600 -d RAW
 
-A quick breakdown, of the above command. probe [probe device] -p [port] -b [baudrate] -d [debugMode]  
+A quick breakdown of the above command is. probe [probe device] -p [port] -b [baudrate] -d [debugMode]  
 
 After running the above command it threw an error, I commented this variable in the script. 
 
