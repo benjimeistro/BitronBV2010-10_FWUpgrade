@@ -122,7 +122,7 @@ rebooted.
 
 After reboot then went straight back into the OpenHAB console:
 
-openhab> zigbee firmware /home/b/bitron_fw/NCP_USW_EM3587-LR_678-115k2.ebl
+openhab> zigbee firmware /bitron_fw/NCP_USW_EM3587-LR_678-115k2.ebl
 Dongle firmware status: FIRMWARE_UPDATE_STARTED.
 Starting dongle firmware update...
 
