@@ -119,9 +119,9 @@ openhab> zigbee firmware /bitron_fw/NCP_USW_EM3587-LR_678-115k2.ebl
 Dongle firmware status: FIRMWARE_UPDATE_STARTED.
 Starting dongle firmware update...
 ```
-I didn't get any response from the console, it will show this message and then that is all. It just did this and then all was quiet. At this point I'm thinking it's either not flashed, it has flashed, it's currently flashing, might even be a brick.. xD in hindsight I should have went and watched the LED on the stick, this probably would have given me some sort of instruction as to what was happening. :)
+I didn't get any response from the console, it will show this message and then that is all. It just did this and then all was quiet. At this point I'm thinking it's either not flashed, it has flashed, it's currently flashing, might even be a brick.. xD In hindsight, I should have went and watched the LED on the stick, this probably would have given me some sort of instruction as to what was happening. :)
 
-I left it alone for around ten minutes, I know better than to panic at this point with FW and I didn't want to interrupt the process of flashing. I also knew I could ground a pin of the device if it bricked to get it back into bootloader mode, so all would not be lost. 
+I left it alone for around ten minutes, I know better than to panic at this point with FW and pull the usb or reboot. I didn't want to interrupt the process of flashing. I also knew I could ground a pin of the device if it bricked to get it back into bootloader mode, so all would not be lost. 
 
 I opened another console, and started to probe the device using the Elelabs script. 
 ```
