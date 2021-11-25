@@ -47,14 +47,9 @@ sudo python3 ./Elelabs_EzspFwUtility.py  probe -p /dev/ttyUSB0 -b 57600 -d RAW
 
 A quick breakdown, of the above command. probe [probe device] -p [port] -b [baudrate] -d [debugMode]  
 
-After running the above command it threw an error on the script below. 
-I just commented this variable out in the script. I DO NOT recommend you do this, this is just what i did.
- 
-(It didn't seem to make much of an impact, at the very least it now allowed me to probe and restart the BV AV2010.)
+After running the above command it threw an error, I commented this variable in the script. 
 
-File "./Elelabs_EzspFwUtility.py", line 549, in probe
-    self.logger.info("Firmware: %s" % firmware_version)
-UnboundLocalError: local variable 'firmware_version' referenced before assignment
+I DO NOT recommend you do this, this is just what i did.
 
 I could now probe and restart the BV AV2010/10
 
