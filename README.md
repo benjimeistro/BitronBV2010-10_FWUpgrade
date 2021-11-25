@@ -6,11 +6,7 @@ Bitron BV AV2010/10 ZigBee USB Stick FW Upgrade Procedure.
 Firstly: Many Thanks to Elelabs, Chris Jackson and NilsOF.
 
 Background:
-The Bitron BV AV2010/10 Funkstick I bought from Amazon was loaded with FW version 5.8.0.
-
-Which worked on my OpenHAB system but not very well. :(
-
-I had kept an eye on FW upgrade methods for the Bitron BV AV2010/10, but nothing concrete had arisen. 
+The Bitron BV AV2010/10 Funkstick I bought from Amazon was loaded with FW version 5.8.0, which worked on my OpenHAB system but not very well. :( I had kept an eye on FW upgrade methods for the Bitron BV AV2010/10, but nothing concrete had arisen. 
 
 There was this link here: https://github.com/zigpy/bellows/issues/348
 
