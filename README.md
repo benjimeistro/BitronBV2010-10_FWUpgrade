@@ -20,13 +20,15 @@ After Googling the chipset and stick I narrowed it down to one user called NilsO
  
 https://community.openhab.org/t/firmware-upgrade-the-bitronvideo-bv-2010-10-zigbee-usb-dongle/128879
 
-NilsOF had managed to flash a later version FW to his BV AV2010, in the openHAB topic above he mentioned he had used the FW in the link below to upgrade the AV2010/10 to a later version:
+In the topic above NilsOF mentioned he ? managed to flash a later version FW to the BV AV2010. 
+
+Nils also mentioned that they used the FW in the link below to upgrade the AV2010/10 to a later version:
 
 https://github.com/grobasoz/zigbee-firmware/raw/af7c35ea8d580152eb9853af1d3fab91bef3b5d4/EM3587/NCP_USW_EM3587-LR_678-115k2.ebl
 
 This piqued my interest. The process took some playing with to nail down but this is how I upgraded my BV AV2010/10. :)
 
-NilsOF provided the method of flashing via the openHAB console in the link above. 
+NilsOF provided the method of flashing via the openHAB console in the link above also. 
 
 Disclaimer:
 
