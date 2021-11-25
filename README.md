@@ -31,6 +31,7 @@ Disclaimer:
 ***Anything you decide to follow in this document, you do at your own risk. At your own consequence. THIS IS MY PUBLIC PERSONAL GUIDE FOR PERSONAL USE, I AM NOT RESPONSIBLE FOR ANY DAMAGE INCURRED IF YOU FOLLOW ANY OF THE BELOW INSTRUCTIONS.***
 
 METHOD:
+
 I downloaded Elelabs flashing script for EMBER chipsets to check the firmware versions from here:
 
 https://github.com/Elelabs/elelabs-zigbee-ezsp-utility
@@ -61,13 +62,13 @@ Elelabs_EzspFwUtility:   EZSP adapter in bootloader mode detected:
 Elelabs_EzspFwUtility:   EM3587 Serial Btl v5.8.0.0 b134
 Elelabs_EzspFwUtility:   Allready in bootloader mode. No need to restart
 ``` 
-Ah! As seen above I can now see the FW version running on the stick and I now know that because of the information
-supplied and groundwork on the chipset, the FW supplied by NilsOF in the GitHub link above can be applied to my device! 
+As seen above I can now see the firmware version running on the stick I have and I now know that because of the information
+supplied by NilsOF and research on the chipset, that the firmware linked by NilsOF in the GitHub link can be applied to my device! :) 
 
-My BV AV2010/10 is on firmware 5.8.0 from the output above..
+My BV AV2010/10 is on firmware 5.8.0 from the output above.
 
-Right, time to get flashing. I immediately tried to flash it using the script above, at first it almost succeeded, or
-so I thought.
+Time to get flashing. I immediately tried to flash it using the elelabs script above, at first it almost succeeded, or
+so I thought, the minicom baudrate seems to be hard coded in the python script..
 ```
 ./Elelabs_EzspFwUtility.py flash -f /bitron_fw/NCP_USW_EM3587-LR_678-115k2.ebl -p /dev/ttyUSB0 -b 57600 -d DEBUG 
 Elelabs_EzspFwUtility:   RESET FRAME
