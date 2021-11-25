@@ -68,7 +68,7 @@ supplied by NilsOF and research on the chipset, that the firmware linked by Nils
 My BV AV2010/10 is on firmware 5.8.0 from the output above.
 
 Time to get flashing. I immediately tried to flash it using the elelabs script above, at first it almost succeeded, or
-so I thought, the minicom baudrate seems to be hard coded in the python script..
+so I thought, the x-modem baudrate seems to be hard coded in the python script..
 ```
 ./Elelabs_EzspFwUtility.py flash -f /bitron_fw/NCP_USW_EM3587-LR_678-115k2.ebl -p /dev/ttyUSB0 -b 57600 -d DEBUG 
 Elelabs_EzspFwUtility:   RESET FRAME
