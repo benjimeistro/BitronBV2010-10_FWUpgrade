@@ -94,7 +94,7 @@ zigbee command and the only thing found was an otaupgrade command.
 zigbee firmware 
 Error: Could not find command: firmware
 ```
-After re-reading the above OpenHAB forum post a few times, it was apparent that the user was using a later version of the ZigBee
+After re-reading the above OpenHAB forum post a few times, it was apparent that NilsOF was using a later version of the ZigBee
 binding for OpenHAB than myself. 
 
 I then upgraded the OpenHAB packages to the latest unstable version and refreshed the zigbee bundles in the OpenHAB console. 
