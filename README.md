@@ -14,22 +14,23 @@ I had kept an eye on FW upgrade methods for the Bitron BV AV2010/10, but nothing
 
 There was this link here:
 
-[https://github.com/zigpy/bellows/issues/348]
+https://github.com/zigpy/bellows/issues/348
 
-Which explains the bootloader process and the chipset flashing methods, but the outcome wasn't specific and looked to be a lot of development 
-talk and experimentation for the bellows tool with no concrete FW or method. 
+The link above is interesting and explains the bootloader process and the chipset flashing methods, but the outcome wasn't too specific and looked to be a lot of development talk and experimentation for the bellows tool with no concrete FW or method, that I could see. 
 
-After Googling the chipset and stick I narrowed it down to one user called NilsOF who had a recent post on the OpenHAB forum,
+After Googling the chipset and stick I narrowed it down to one user called NilsOF who had a recent post on the OpenHAB forum:
  
-[https://community.openhab.org/t/firmware-upgrade-the-bitronvideo-bv-2010-10-zigbee-usb-dongle/128879]
+https://community.openhab.org/t/firmware-upgrade-the-bitronvideo-bv-2010-10-zigbee-usb-dongle/128879
 
 NilsOF had managed to flash a later version FW to his BV AV2010!! Using a FW file here below:
 
-[https://github.com/grobasoz/zigbee-firmware/raw/af7c35ea8d580152eb9853af1d3fab91bef3b5d4/EM3587/NCP_USW_EM3587-LR_678-115k2.ebl]
+https://github.com/grobasoz/zigbee-firmware/raw/af7c35ea8d580152eb9853af1d3fab91bef3b5d4/EM3587/NCP_USW_EM3587-LR_678-115k2.ebl
 
 This piqued my interest. The process took some playing with to nail down but this is how I upgraded my BV AV2010/10. :)
 
-Disclaimer
+NilsOF provided the method of flashing via the openHAB console in the link above. 
+
+Disclaimer:
 
 ***I do not hold any guarantees that this will work for you its just the documented process I took to upgrade my FW on my Bitron Funkstik BV AV2010/10.***  
   ***Anything you decide to follow in the document, you do at your own risk. With your own will, with your own consequences. I AM NOT RESPONSIBLE ***
@@ -37,7 +38,7 @@ Disclaimer
 METHOD:
 I downloaded Elelabs flashing script for EMBER chipsets from here:
 
-[https://github.com/Elelabs/elelabs-zigbee-ezsp-utility]
+https://github.com/Elelabs/elelabs-zigbee-ezsp-utility
 
 Unzipped the directory and cd'd to it, then installed requirements as per instructions on the GitHUB page.
 
@@ -83,7 +84,7 @@ Elelabs_EzspFwUtility:   Failed to restart into bootloader mode. Please see user
 
 :(
 
-I scoured the internet again for a solution. There was one ambigious message on the OpenHAB topic above.  
+I scoured the internet again for a solution. There was one ambigious message on the same OpenHAB topic above from NilsOF.  
 
 "I used the OpenHAB console zigbee firmware command to flash."
 
