@@ -1,14 +1,14 @@
-# Bitron BV2010/10 Firmware Upgrade Method.
-Bitron BV2010/10 ZigBee USB Stick FW Upgrade Procedure. 
+# Bitron BV AV2010/10 Firmware Upgrade Method.
+Bitron BV AV2010/10 ZigBee USB Stick FW Upgrade Procedure. 
 
 ***I DO NOT HOLD ANY RESPONSIBILTY FOR METHODS PROPOSED BELOW THIS WAS JUST MY WORKING METHOD TO UPGRADE THE FW AND NOTES TO HELP ME REMEMBER THE PROCESS***
 
 Background:
-The Bitron BV2010 Funkstick I bought from Amazon was loaded with FW version 5.8.0.
+The Bitron BV AV2010/10 Funkstick I bought from Amazon was loaded with FW version 5.8.0.
 
 Which worked on my OpenHAB system but not very well. :(
 
-I had kept an eye on FW upgrade methods for the Bitron BV2010/10, but nothing concrete had arisen. 
+I had kept an eye on FW upgrade methods for the Bitron BV AV2010/10, but nothing concrete had arisen. 
 
 There was this link here:
 
@@ -21,15 +21,15 @@ After Googling the chipset and stick I narrowed it down to one user called NilsO
  
 [https://community.openhab.org/t/firmware-upgrade-the-bitronvideo-bv-2010-10-zigbee-usb-dongle/128879]
 
-NilsOF had managed to flash a later version FW to his BV2010!! Using a FW file here below:
+NilsOF had managed to flash a later version FW to his BV AV2010!! Using a FW file here below:
 
 [https://github.com/grobasoz/zigbee-firmware/raw/af7c35ea8d580152eb9853af1d3fab91bef3b5d4/EM3587/NCP_USW_EM3587-LR_678-115k2.ebl]
 
-This piqued my interest. The process took some playing with to nail down but this is how I upgraded my BV2010/10. :)
+This piqued my interest. The process took some playing with to nail down but this is how I upgraded my BV AV2010/10. :)
 
 Disclaimer
 
-***I do not hold any guarantees that this will work for you its just the documented process I took to upgrade my FW on my Bitron Funkstik BV2010/10.***  
+***I do not hold any guarantees that this will work for you its just the documented process I took to upgrade my FW on my Bitron Funkstik BV AV2010/10.***  
   ***Anything you decide to follow in the document, you do at your own risk. With your own will, with your own consequences. I AM NOT RESPONSIBLE ***
 
 METHOD:
@@ -48,13 +48,13 @@ A quick breakdown, of the above command. probe [probe device] -p [port] -b [baud
 After running the above command it threw an error on the script below. 
 I just commented this variable out in the script. I DO NOT recommend you do this, this is just what i did.
  
-(It didn't seem to make much of an impact, at the very least it now allowed me to probe and restart the BV2010.)
+(It didn't seem to make much of an impact, at the very least it now allowed me to probe and restart the BV AV2010.)
 
 File "./Elelabs_EzspFwUtility.py", line 549, in probe
     self.logger.info("Firmware: %s" % firmware_version)
 UnboundLocalError: local variable 'firmware_version' referenced before assignment
 
-I could now probe and restart the BV2010/10
+I could now probe and restart the BV AV2010/10
 
 ./Elelabs_EzspFwUtility.py probe -p /dev/ttyUSB0  -b 57600 -d DEBUG
 Elelabs_EzspFwUtility:   RESET FRAME
