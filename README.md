@@ -25,7 +25,7 @@ NilsOF had managed to flash a later version FW to his BV2010!! Using a FW file h
 
 [https://github.com/grobasoz/zigbee-firmware/raw/af7c35ea8d580152eb9853af1d3fab91bef3b5d4/EM3587/NCP_USW_EM3587-LR_678-115k2.ebl]
 
-This peaked my interest. The process took some playing with to nail down but this is how I upgraded my BV2010/10. :)
+This piqued my interest. The process took some playing with to nail down but this is how I upgraded my BV2010/10. :)
 
 Disclaimer
 
