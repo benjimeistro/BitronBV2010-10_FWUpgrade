@@ -35,7 +35,7 @@ I downloaded Elelabs flashing script for EMBER chipsets to check the firmware ve
 
 https://github.com/Elelabs/elelabs-zigbee-ezsp-utility
 
-I unzipped the directory and cd'd to it, then installed requirements as per instructions on the Elelabs GitHUB page.
+I unzipped the directory and cd'd to it, then installed requirements as per instructions on the Elelabs Github page.
 
 I then ran the script using this command after granting execute permissions on the script: 
 ```
